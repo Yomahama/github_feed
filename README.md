@@ -1,16 +1,28 @@
-# github_feed
+# The task
 
-A new Flutter project.
+Github feed. Fetch github feeds (https://developer.github.com/v3/activity/feeds/ (https://developer.github.com/v3/activity/feeds/))
 
-## Getting Started
+Main Purpose
 
-This project is a starting point for a Flutter application.
+1. Display feeds in the window
+   First screen:
+   - Display a list of available feeds
+   - Allow user to enter requried parameters for each feed
+     Second screen:
+   - Display a list of feed items
+2. (Optional) Auto refresh
+3. (Optional) App should work offline
+4. (Optional) Graphicly dislay results (list, timeline, slider, etc.)
+5. (Optional) Authenticate with github to get private feeds
 
-A few resources to get you started if this is your first Flutter project:
+Hints
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. You can use libraries (such as dio, getit, etc.)
+2. Store results in database or shared prefs
+3. Use whatever design you see fit
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Some recommendations working on a project:
+
+1. Unit tests if you think you need it
+2. Bloc, Cubit if you think you need it
+3. Widget tests if you think you need it
