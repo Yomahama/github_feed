@@ -14,16 +14,12 @@ class FeedCubit extends Cubit<FeedState> {
   Timer? _autoRefreshTimer;
   FeedCubit({
     required FeedRepository feedRepository,
-    required Link link,
   })  : _feedRepository = feedRepository,
-        super(const FeedState.initial()) {
-    _get(link);
-    _startAutoRefresh(link);
-  }
+        super(const FeedState.initial());
 
   static const _autoRefreshInterval = Duration(minutes: 1);
 
-  Future<void> _get(Link link) async {
+  Future<void> get(Link link) async {
     emit(FeedState.loading(feed: state.feed));
     try {
       final feed = await _feedRepository.getFeed(link);
@@ -36,8 +32,8 @@ class FeedCubit extends Cubit<FeedState> {
     }
   }
 
-  void _startAutoRefresh(Link link) {
-    _autoRefreshTimer = Timer.periodic(_autoRefreshInterval, (_) => _get(link));
+  void startAutoRefresh(Link link) {
+    _autoRefreshTimer = Timer.periodic(_autoRefreshInterval, (_) => get(link));
   }
 
   @override

@@ -48,7 +48,7 @@ class _LinkTileView extends StatelessWidget {
                     link.name,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
-                  if (context.read<LinkTileCubit>().linkHasParams) ...[
+                  if (context.read<LinkTileCubit>().linkHasRequiredParams) ...[
                     const Text('Enter required params:', style: TextStyles.robotoMedium12Grey),
                     const SizedBox(height: 6),
                     DynamicLinkTextField(
@@ -71,11 +71,11 @@ class _LinkTileView extends StatelessWidget {
     final linkTileCubit = context.read<LinkTileCubit>();
     final linkTileState = linkTileCubit.state;
 
-    if (!linkTileCubit.linkHasParams) {
+    if (!linkTileCubit.linkHasRequiredParams) {
       return context.go(FeedPage.route, extra: link);
     }
 
-    if (linkTileState.someParamsAreEmpty) {
+    if (linkTileState.someInputParamsAreEmpty) {
       return _showMissingParamsDialog(context);
     }
 

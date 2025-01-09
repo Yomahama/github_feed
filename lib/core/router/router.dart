@@ -15,7 +15,7 @@ class AppRouter {
     GoRoute(
       path: LinksPage.route,
       builder: (context, state) => BlocProvider(
-        create: (context) => FeedLinksCubit(feedRepository: locator<FeedRepositoryImpl>()),
+        create: (context) => FeedLinksCubit(feedRepository: locator<FeedRepositoryImpl>())..get(),
         child: const LinksPage(),
       ),
       routes: [
@@ -25,7 +25,9 @@ class AppRouter {
             final link = state.extra as Link;
 
             return BlocProvider(
-              create: (context) => FeedCubit(feedRepository: locator<FeedRepositoryImpl>(), link: link),
+              create: (context) => FeedCubit(feedRepository: locator<FeedRepositoryImpl>())
+                ..get(link)
+                ..startAutoRefresh(link),
               child: FeedPage(link: link),
             );
           },

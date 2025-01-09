@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_feed/features/feed/data/models/feed.dart';
@@ -15,22 +13,22 @@ class ArticlesListView extends StatelessWidget {
     final feedState = context.watch<FeedCubit>().state;
 
     return feedState.maybeWhen(
-      loaded: (feed) => _LoadedArticlesView(feed: feed),
-      failure: (feed) => feed == null ? const _FailureArticlesView() : _LoadedArticlesView(feed: feed),
-      loading: (feed) => feed == null ? const SliverFillRemainingLoading() : _LoadedArticlesView(feed: feed),
+      loaded: (feed) => LoadedArticlesView(feed: feed),
+      failure: (feed) => feed == null ? const FailureArticlesView() : LoadedArticlesView(feed: feed),
+      loading: (feed) => feed == null ? const SliverFillRemainingLoading() : LoadedArticlesView(feed: feed),
       orElse: () => const SliverFillRemainingLoading(),
     );
   }
 }
 
-class _LoadedArticlesView extends StatelessWidget {
+class LoadedArticlesView extends StatelessWidget {
   final Feed feed;
-  const _LoadedArticlesView({required this.feed, super.key});
+  const LoadedArticlesView({required this.feed, super.key});
 
   @override
   Widget build(BuildContext context) {
     if (feed.articles.isEmpty) {
-      return const _EmptyArticlesView();
+      return const EmptyArticlesView();
     }
 
     return SliverList.separated(
@@ -41,8 +39,8 @@ class _LoadedArticlesView extends StatelessWidget {
   }
 }
 
-class _FailureArticlesView extends StatelessWidget {
-  const _FailureArticlesView({super.key});
+class FailureArticlesView extends StatelessWidget {
+  const FailureArticlesView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +53,8 @@ class _FailureArticlesView extends StatelessWidget {
   }
 }
 
-class _EmptyArticlesView extends StatelessWidget {
-  const _EmptyArticlesView({super.key});
+class EmptyArticlesView extends StatelessWidget {
+  const EmptyArticlesView({super.key});
 
   @override
   Widget build(BuildContext context) {

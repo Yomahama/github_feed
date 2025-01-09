@@ -17,7 +17,9 @@ class Link with _$Link {
 
   static final pathParamRegex = RegExp(r'\{(\w+)\}');
 
-  List<String> getRequiredPathParameters() => pathParamRegex.allMatches(href).map((match) => match.group(1)!).toList();
+  List<String> getRequiredPathParameters() {
+    return pathParamRegex.allMatches(href).map((match) => match.group(1)!).toList();
+  }
 
   String getHrefWithParams(Map<String, String> parameters) {
     return parameters.entries.fold(href, (result, entry) => result.replaceAll('{${entry.key}}', entry.value));

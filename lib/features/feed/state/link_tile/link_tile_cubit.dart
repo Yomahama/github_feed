@@ -20,5 +20,5 @@ class LinkTileCubit extends Cubit<LinkTileState> {
     emit(state.copyWith(params: updatedParams));
   }
 
-  bool get linkHasParams => state.params.keys.isNotEmpty;
+  bool get linkHasRequiredParams => state.params.keys.isNotEmpty;
 }

@@ -20,7 +20,7 @@ class FeedPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           AppSliverAppBar(title: link.name),
-          const _AboutSectionView(),
+          const ArticlesAboutSectionView(),
           const ArticlesListView(),
           SliverToBoxAdapter(child: SizedBox(height: context.bottomViewPadding)),
         ],
@@ -29,8 +29,8 @@ class FeedPage extends StatelessWidget {
   }
 }
 
-class _AboutSectionView extends StatelessWidget {
-  const _AboutSectionView();
+class ArticlesAboutSectionView extends StatelessWidget {
+  const ArticlesAboutSectionView({super.key});
 
   @override
   Widget build(BuildContext context) {

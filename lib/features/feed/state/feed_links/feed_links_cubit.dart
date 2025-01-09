@@ -13,11 +13,9 @@ class FeedLinksCubit extends Cubit<FeedLinksState> {
   FeedLinksCubit({
     required FeedRepository feedRepository,
   })  : _feedRepository = feedRepository,
-        super(const FeedLinksState.initial()) {
-    _get();
-  }
+        super(const FeedLinksState.initial());
 
-  Future<void> _get() async {
+  Future<void> get() async {
     emit(const FeedLinksState.loading());
     try {
       final links = await _feedRepository.getFeedLinks();

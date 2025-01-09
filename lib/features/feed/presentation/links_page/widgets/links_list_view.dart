@@ -17,14 +17,14 @@ class LinksListView extends StatelessWidget {
         itemBuilder: (_, i) => LinkTile(link: links.values[i]),
         separatorBuilder: (context, index) => const Divider(indent: 15),
       ),
-      failure: () => const _LinksErrorView(),
+      failure: () => const FailureLinksView(),
       orElse: () => const SliverFillRemainingLoading(),
     );
   }
 }
 
-class _LinksErrorView extends StatelessWidget {
-  const _LinksErrorView();
+class FailureLinksView extends StatelessWidget {
+  const FailureLinksView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +36,3 @@ class _LinksErrorView extends StatelessWidget {
     );
   }
 }
-
-   // final links = Links(links: {
-    //   'timeline': Link(href: 'https://github.com/timeline', type: 'application/atom+xml'),
-    //   'user': Link(href: 'https://github.com/{user}', type: 'application/atom+xml'),
-    //   'repository_discussions':
-    //       Link(href: 'https://github.com/{user}/{repo}/discussions', type: 'application/atom+xml'),
-    //   'repository_discussions_category': Link(
-    //       href: 'https://github.com/{user}/{repo}/discussions/categories/{category}', type: 'application/atom+xml'),
-    //   'security_advisories': Link(href: 'https://github.com/security-advisories', type: 'application/atom+xml'),
-    // });
-
-    // return SliverList.separated(
-    //   itemCount: links.values.length,
-    //   itemBuilder: (_, i) => LinkTile(link: links.values[i]),
-    //   separatorBuilder: (context, index) => const Divider(indent: 15),
-    // );

@@ -8,7 +8,7 @@ class LinkTileState with _$LinkTileState {
     required Map<String, String> params,
   }) = _LinkTileState;
 
-  bool get someParamsAreEmpty => params.entries.any((value) => value.value.isEmpty);
+  bool get someInputParamsAreEmpty => params.entries.any((value) => value.value.isEmpty);
 
   Link get updatedLink => link.copyWith(href: link.getHrefWithParams(params));
 }
