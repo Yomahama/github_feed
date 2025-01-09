@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_feed/features/feed/data/models/feed.dart';
 import 'package:github_feed/features/feed/presentation/feed_page/widgets/article_tile.dart';
+import 'package:github_feed/features/feed/presentation/state/feed/feed_cubit.dart';
 import 'package:github_feed/features/feed/presentation/widgets/sliver_fill_remaining_loading.dart';
-import 'package:github_feed/features/feed/state/feed/feed_cubit.dart';
 
 class ArticlesListView extends StatelessWidget {
   const ArticlesListView({super.key});

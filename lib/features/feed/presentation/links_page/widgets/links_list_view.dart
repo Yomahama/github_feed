@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_feed/features/feed/presentation/links_page/widgets/link_tile.dart';
+import 'package:github_feed/features/feed/presentation/state/feed_links/feed_links_cubit.dart';
 import 'package:github_feed/features/feed/presentation/widgets/sliver_fill_remaining_loading.dart';
-import 'package:github_feed/features/feed/state/feed_links/feed_links_cubit.dart';
 
 class LinksListView extends StatelessWidget {
   const LinksListView({super.key});

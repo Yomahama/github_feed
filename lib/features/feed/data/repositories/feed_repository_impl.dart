@@ -1,19 +1,19 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:github_feed/features/feed/data/api/feed_api_client.dart';
-import 'package:github_feed/features/feed/data/local/feed_local_client.dart';
+import 'package:github_feed/features/feed/data/data_sources/feed_api_data_source.dart';
 import 'package:github_feed/features/feed/data/models/feed.dart';
 import 'package:github_feed/features/feed/data/models/link.dart';
 import 'package:github_feed/features/feed/data/models/links.dart';
-import 'package:github_feed/features/feed/data/repositories/feed_repository.dart';
+import 'package:github_feed/features/feed/domain/data_sources/feed_local_data_source.dart';
+import 'package:github_feed/features/feed/domain/repositories/feed_repository.dart';
 
 class FeedRepositoryImpl implements FeedRepository {
-  final FeedLocalClient _localClient;
-  final FeedApiClient _apiClient;
+  final FeedLocalDataSource _localClient;
+  final FeedApiDataSource _apiClient;
   final Connectivity _connectivity;
 
   const FeedRepositoryImpl({
-    required FeedLocalClient localClient,
-    required FeedApiClient apiClient,
+    required FeedLocalDataSource localClient,
+    required FeedApiDataSource apiClient,
     required Connectivity connectivity,
   })  : _localClient = localClient,
         _apiClient = apiClient,

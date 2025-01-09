@@ -5,7 +5,7 @@ import 'package:github_feed/core/extensions/datetime_extensions.dart';
 import 'package:github_feed/features/feed/data/models/feed.dart';
 import 'package:github_feed/features/feed/data/models/link.dart';
 import 'package:github_feed/features/feed/presentation/feed_page/widgets/feed_articles_list_view.dart';
-import 'package:github_feed/features/feed/state/feed/feed_cubit.dart';
+import 'package:github_feed/features/feed/presentation/state/feed/feed_cubit.dart';
 import 'package:github_feed/shared/widgets/app_sliver_app_bar/app_sliver_app_bar.dart';
 
 class FeedPage extends StatelessWidget {

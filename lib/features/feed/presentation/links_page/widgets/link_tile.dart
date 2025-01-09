@@ -8,7 +8,7 @@ import 'package:github_feed/core/constants/theme/text_styles.dart';
 import 'package:github_feed/features/feed/data/models/link.dart';
 import 'package:github_feed/features/feed/presentation/feed_page/feed_page.dart';
 import 'package:github_feed/features/feed/presentation/links_page/widgets/link_text_field.dart';
-import 'package:github_feed/features/feed/state/link_tile/link_tile_cubit.dart';
+import 'package:github_feed/features/feed/presentation/state/link_tile/link_tile_cubit.dart';
 import 'package:github_feed/shared/animations/animated_color_tap.dart';
 import 'package:go_router/go_router.dart';
 

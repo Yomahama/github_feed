@@ -2,8 +2,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:github_feed/features/feed/data/models/link.dart';
 import 'package:github_feed/features/feed/data/models/links.dart';
-import 'package:github_feed/features/feed/data/repositories/feed_repository.dart';
-import 'package:github_feed/features/feed/state/feed_links/feed_links_cubit.dart';
+import 'package:github_feed/features/feed/domain/repositories/feed_repository.dart';
+import 'package:github_feed/features/feed/presentation/state/feed_links/feed_links_cubit.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockFeedRepository extends Mock implements FeedRepository {}

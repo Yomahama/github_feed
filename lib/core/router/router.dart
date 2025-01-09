@@ -4,8 +4,8 @@ import 'package:github_feed/features/feed/data/models/link.dart';
 import 'package:github_feed/features/feed/data/repositories/feed_repository_impl.dart';
 import 'package:github_feed/features/feed/presentation/feed_page/feed_page.dart';
 import 'package:github_feed/features/feed/presentation/links_page/links_page.dart';
-import 'package:github_feed/features/feed/state/feed/feed_cubit.dart';
-import 'package:github_feed/features/feed/state/feed_links/feed_links_cubit.dart';
+import 'package:github_feed/features/feed/presentation/state/feed/feed_cubit.dart';
+import 'package:github_feed/features/feed/presentation/state/feed_links/feed_links_cubit.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {

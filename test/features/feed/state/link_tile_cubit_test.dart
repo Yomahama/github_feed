@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:github_feed/features/feed/data/models/link.dart';
-import 'package:github_feed/features/feed/state/link_tile/link_tile_cubit.dart';
+import 'package:github_feed/features/feed/presentation/state/link_tile/link_tile_cubit.dart';
 
 void main() {
   group('LinkTileCubit', () {

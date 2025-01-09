@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:github_feed/features/feed/data/models/feed.dart';
 import 'package:github_feed/features/feed/data/models/link.dart';
-import 'package:github_feed/features/feed/data/repositories/feed_repository.dart';
+import 'package:github_feed/features/feed/domain/repositories/feed_repository.dart';
 
 part 'feed_cubit.freezed.dart';
 part 'feed_state.dart';
